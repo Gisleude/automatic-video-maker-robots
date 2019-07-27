@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Gisleude/video-maker/issues"
   },
-  "homepage": "https://github.com/Gisleude/video-maker#readme"
+  "homepage": "https://github.com/Gisleude/video-maker#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
