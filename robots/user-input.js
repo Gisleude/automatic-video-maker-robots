@@ -1,13 +1,25 @@
-/*
-function askAndReturnSearchTerm(){
-  return readline.question('Type a Wikipedia search term: ')
+const readline = require('readline-sync')
+const state = require('./state.js')
+function robot(){
+  const content = {
+    maximumSentences: 7
+  }
+
+  content.searchTerm = askAndReturnSearchTerm()
+  content.prefix = askAndReturnSearchPrefix()
+  state.save(content)
+
+  function askAndReturnSearchTerm(){
+    return readline.question('Type a Wikipedia search term: ')
+  }
+
+  function askAndReturnSearchPrefix(){
+    const prefixes = ['Who is', 'What is', 'The history of']
+    const selectedPrefixIndex = readline.keyInSelect(prefixes, 'Choose one option: ')
+    const selectedPrefixText = prefixes[selectedPrefixIndex]
+
+    return selectedPrefixText
+  }
 }
 
-function askAndReturnSearchPrefix(){
-  const prefixes = ['Who is', 'What is', 'The history of']
-  const selectedPrefixIndex = readline.keyInSelect(prefixes, 'Choose one option: ')
-  const selectedPrefixText = prefixes[selectedPrefixIndex]
-
-  return selectedPrefixText
-}
-*/
+module.exports = robot
