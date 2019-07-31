@@ -4,12 +4,6 @@ const sentenceBoundDetection = require('sbd')
 const watsonApiKey = require('../credentials/watson-nlu.json').apikey
 const NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js')
 
-var nlu = new NaturalLanguageUnderstandingV1({
-  iam_apikey: watsonApiKey,
-  version: '2018-04-05',
-  url: 'https://gateway.watsonplatform.net/natural-language-understanding/api/'
-})
-
 const nlu = new NaturalLanguageUnderstandingV1({
   iam_apikey: watsonApiKey,
   version: '2018-04-05',
@@ -20,7 +14,7 @@ const state = require('./state.js')
 
 async function robot() {
   const content = state.load()
-  
+
   await fetchContent(content)
   sanitizeContent(content)
   breakContentIntoSentences(content)
