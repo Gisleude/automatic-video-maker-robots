@@ -24,3 +24,13 @@ File: `watson-nlu.json`
   "url": "https://gateway.watsonplatform.net/natural-language-understanding/api"
 }
 ```
+
+## Google api
+
+```
+{
+  "apiKey": "*****************************",
+  "searchEngineId": "*****************************"
+}
+
+```
